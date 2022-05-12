@@ -10,12 +10,15 @@ import java.io.File;
 import javax.imageio.ImageIO;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+import mypanel.PaintPanel;
 
 public class Screenshot {
-	Container c;
+	PaintPanel c;
 	JFrame j;
 	
-	public void start(Container c, JFrame j) {                                             
+	public void start(PaintPanel c, JFrame j) {                                             
 		this.c = c;
 		this.j = j;
 		BufferedImage image = new BufferedImage(c.getWidth(), c.getHeight(), BufferedImage.TYPE_INT_RGB);

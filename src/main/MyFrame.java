@@ -4,6 +4,8 @@ import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Vector;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -14,16 +16,21 @@ import mypanel.*;
 
 public class MyFrame extends JFrame{
 	static Color selectedColor;
+	public static ArrayList<Point> points = new ArrayList<Point>();
 	
 	Container c = getContentPane();
-	JFrame myFrame = this;
-	SaveListener saveListener = new SaveListener(c, myFrame);
+	MyFrame myFrame = this;
 	
 	
-	MenuPanel menuPanel = new MenuPanel();
 	PaintPanel paintPanel = new PaintPanel();
-
+	MenuPanel menuPanel = new MenuPanel(myFrame);
 	
+	public PaintPanel getPaintPanel() {
+		
+		return paintPanel;
+	}
+
+
 	MyFrame(){
 		// 제목, 크기 등 기본 JFrame 설정
 		SettingManager settingManager = new SettingManager(myFrame);
@@ -32,7 +39,7 @@ public class MyFrame extends JFrame{
 		c.add(menuPanel, BorderLayout.NORTH);
 		c.add(paintPanel, BorderLayout.CENTER);
 		
-		paintPanel.addMouseMotionListener(new PaintListener());
+		paintPanel.addMouseMotionListener(new PaintListener(paintPanel));
 		
 		setVisible(true);
 	}

@@ -5,15 +5,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 import main.*;
+import mypanel.PaintPanel;
 
 public class SaveListener implements ActionListener {
-	private Container c;
+	private PaintPanel c;
 	private JFrame j;
 	Screenshot screenshot = new Screenshot();
 	
-	public SaveListener(Container c, JFrame j) {
+	public SaveListener(PaintPanel c, JFrame j) {
 		super();
 		this.c = c;
 		this.j = j;
