@@ -16,7 +16,7 @@ import mypanel.*;
 
 public class MyFrame extends JFrame{
 	static Color selectedColor;
-	public static ArrayList<Point> points = new ArrayList<Point>();
+	public static ArrayList<ArrayList<Point>> points = new ArrayList<ArrayList<Point>>();
 	
 	Container c = getContentPane();
 	MyFrame myFrame = this;
@@ -40,6 +40,7 @@ public class MyFrame extends JFrame{
 		c.add(paintPanel, BorderLayout.CENTER);
 		
 		paintPanel.addMouseMotionListener(new PaintListener(paintPanel));
+		paintPanel.addMouseListener(new PaintListener2());
 		
 		setVisible(true);
 	}
