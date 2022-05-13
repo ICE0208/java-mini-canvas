@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import main.MyFrame;
 import mypanel.PaintPanel;
 
-public class UndoListener implements ActionListener{
+public class RemoveAllListener implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		MyFrame.points.clear();
