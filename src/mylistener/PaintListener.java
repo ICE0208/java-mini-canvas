@@ -13,7 +13,7 @@ import mypanel.PaintPanel;
 
 public class PaintListener extends MouseMotionAdapter {
 	
-	PaintPanel paintPanel;
+	static public PaintPanel paintPanel;
 	public static ArrayList<Point> tempPoints = null;
 	public static int curIndex = 0;
 	

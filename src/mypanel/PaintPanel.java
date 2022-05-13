@@ -1,9 +1,12 @@
 package mypanel;
 
+import java.awt.BasicStroke;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Point;
+import java.awt.geom.Line2D;
 import java.util.ArrayList;
 
 import javax.swing.JPanel;
@@ -25,7 +28,10 @@ public class PaintPanel extends JPanel {
 		 Point endP;
 		
 		 
-		 g.setColor(Color.BLACK);
+	
+		 Graphics2D g2 = (Graphics2D) g;
+		 g2.setColor(Color.BLACK);
+		 g2.setStroke(new BasicStroke(10));
 //		 for(int i=0; i<MyFrame.points.size(); i++) {
 //			 Point point = MyFrame.points.get(i);
 //			 g.fillOval(point.x, point.y, 10, 10);
@@ -38,9 +44,10 @@ public class PaintPanel extends JPanel {
 			 ArrayList<Point> pointObject = MyFrame.points.get(i);
 			 
 			 startP = pointObject.get(0);
-			 for(int j=1; j<pointObject.size(); j++) {
+			 for(int j=0; j<pointObject.size(); j++) {
 				 endP = pointObject.get(j);
-				 g.drawLine(startP.x, startP.y, endP.x, endP.y);
+//				 g.drawLine(startP.x, startP.y, endP.x, endP.y);
+				 g2.draw(new Line2D.Float(startP.x, startP.y, endP.x, endP.y));
 				 startP = endP;
 			 }
 		 }

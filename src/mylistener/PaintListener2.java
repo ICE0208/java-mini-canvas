@@ -7,12 +7,14 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
 import main.MyFrame;
+import mypanel.PaintPanel;
 
 public class PaintListener2 extends MouseAdapter {
 	@Override
 	public void mouseReleased(MouseEvent e) {
 //		System.out.println("release");
 		MyFrame.points.add(PaintListener.tempPoints);
+		PaintListener.paintPanel.repaint();
 		PaintListener.curIndex += 1;
 	}
 	
