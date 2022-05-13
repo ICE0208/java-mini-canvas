@@ -20,6 +20,7 @@ public class PaintListener2 extends MouseAdapter {
 	public void mousePressed(MouseEvent e) {
 //		System.out.println("Press");
 		PaintListener.tempPoints = new ArrayList<Point>();
+		PaintListener.tempPoints.add(e.getPoint());
 		
 	}
 		
