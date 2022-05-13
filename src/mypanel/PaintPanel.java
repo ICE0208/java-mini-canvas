@@ -31,7 +31,7 @@ public class PaintPanel extends JPanel {
 	
 		 Graphics2D g2 = (Graphics2D) g;
 		 g2.setColor(Color.BLACK);
-		 g2.setStroke(new BasicStroke(10));
+		 g2.setStroke(new BasicStroke(5));
 //		 for(int i=0; i<MyFrame.points.size(); i++) {
 //			 Point point = MyFrame.points.get(i);
 //			 g.fillOval(point.x, point.y, 10, 10);

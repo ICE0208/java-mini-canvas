@@ -7,13 +7,16 @@ import javax.swing.event.*;
 
 import main.MyFrame;
 import mylistener.SaveListener;
+import mylistener.UndoListener;
 
 public class MenuPanel extends JPanel {
 	public MenuPanel(MyFrame myFrame) {
-		add(new JButton("1"));
-		add(new JButton("2"));
+		add(new JButton("Nothing"));
+		JButton undoButton = new JButton("Remove All");
+		undoButton.addActionListener(new UndoListener());
+		add(undoButton);
 		
-		JButton saveButton = new JButton("저장하기");
+		JButton saveButton = new JButton("Save");
 		saveButton.addActionListener(new SaveListener(myFrame.getPaintPanel(), myFrame));
 //		myFrame.getPaintPanel();
 		add(saveButton);
