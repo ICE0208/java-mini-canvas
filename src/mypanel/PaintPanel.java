@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 
 import main.MyFrame;
+import mylistener.PaintListener;
 
 public class PaintPanel extends JPanel {
 	
@@ -37,6 +38,21 @@ public class PaintPanel extends JPanel {
 //			 g.fillOval(point.x, point.y, 10, 10);
 //		 }
 //		 System.out.println(MyFrame.points.size());
+		 
+		 ArrayList<Point> paintingPoints = PaintListener.tempPoints;
+		 if (paintingPoints != null && paintingPoints.size() > 0) {
+			 Point startP2;
+			 Point endP2;
+			 
+			 startP2 = paintingPoints.get(0);
+			 for(int j=0; j<paintingPoints.size(); j++) {
+				 endP2 = paintingPoints.get(j);
+//				 g.drawLine(startP.x, startP.y, endP.x, endP.y);
+				 g2.draw(new Line2D.Float(startP2.x, startP2.y, endP2.x, endP2.y));
+				 startP2 = endP2;
+			 }
+			 
+		 }
 		 
 		 
 		 if (MyFrame.points.size() < 1) return;

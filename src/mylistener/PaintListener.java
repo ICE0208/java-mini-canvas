@@ -36,9 +36,6 @@ public class PaintListener extends MouseMotionAdapter {
 		tempPoints.add(point);
 //		System.out.println(tempPoints.size());
 		
-		MyFrame.points.add(curIndex, tempPoints);
-		
-		
 		paintPanel.repaint();
 	}
 }
