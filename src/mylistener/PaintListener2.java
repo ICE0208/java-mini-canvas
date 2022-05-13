@@ -12,11 +12,9 @@ import mypanel.PaintPanel;
 public class PaintListener2 extends MouseAdapter {
 	@Override
 	public void mouseReleased(MouseEvent e) {
-//		System.out.println("release");
 		MyFrame.points.add(PaintListener.tempPoints);
-		MyFrame.points.add(PaintListener.curIndex, PaintListener.tempPoints);
+		PaintListener.tempPoints = null;
 		PaintListener.paintPanel.repaint();
-		PaintListener.curIndex += 1;
 	}
 	
 	@Override

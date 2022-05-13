@@ -15,7 +15,6 @@ public class PaintListener extends MouseMotionAdapter {
 	
 	static public PaintPanel paintPanel;
 	public static ArrayList<Point> tempPoints = null;
-	public static int curIndex = 0;
 	
 	public PaintListener(PaintPanel paintPanel) {
 		this.paintPanel = paintPanel;
@@ -34,7 +33,7 @@ public class PaintListener extends MouseMotionAdapter {
 		Point point = new Point(e.getX(), e.getY());
 //		System.out.println(point.x + ", " + point.y);
 		tempPoints.add(point);
-//		System.out.println(tempPoints.size());
+		System.out.println(MyFrame.points.size());
 		
 		paintPanel.repaint();
 	}
