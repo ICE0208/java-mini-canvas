@@ -20,6 +20,7 @@ public class MyFrame extends JFrame{
 	static public Color selectedColor;
 	static public BasicStroke selectedStroke;
 	public static ArrayList<ArrayList<PointInfo>> points = new ArrayList<ArrayList<PointInfo>>();
+	public static PointsHistory pointsHistory = new PointsHistory();
 	
 	Container c = getContentPane();
 	MyFrame myFrame = this;

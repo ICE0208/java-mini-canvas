@@ -8,6 +8,7 @@ import javax.swing.event.*;
 import main.MyFrame;
 import mylistener.SaveListener;
 import mylistener.UndoListener;
+import mylistener.redoListener;
 import mylistener.ColorListener;
 import mylistener.RemoveAllListener;
 
@@ -22,6 +23,11 @@ public class MenuPanel extends JPanel {
 		JButton undoButton = new JButton("Undo");
 		undoButton.addActionListener(new UndoListener());
 		add(undoButton);
+		
+		// Redo Button
+		JButton redoButton = new JButton("Redo");
+		redoButton.addActionListener(new redoListener());
+		add(redoButton);
 		
 		// Remove All Button
 		JButton removeAllButton = new JButton("Remove All");
