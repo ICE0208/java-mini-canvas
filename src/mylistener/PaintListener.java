@@ -9,12 +9,13 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 
 import main.MyFrame;
+import main.PointInfo;
 import mypanel.PaintPanel;
 
 public class PaintListener extends MouseMotionAdapter {
 	
 	static public PaintPanel paintPanel;
-	public static ArrayList<Point> tempPoints = null;
+	public static ArrayList<PointInfo> tempPoints = null;
 	
 	public PaintListener(PaintPanel paintPanel) {
 		PaintListener.paintPanel = paintPanel;
@@ -30,7 +31,8 @@ public class PaintListener extends MouseMotionAdapter {
 	public void mouseDragged(MouseEvent e) {
 		if (PaintListener.tempPoints == null) return;
 		
-		Point point = new Point(e.getX(), e.getY());
+		PointInfo point = new PointInfo(e.getX(), e.getY(), 
+				MyFrame.selectedColor, MyFrame.selectedStroke);
 //		System.out.println(point.x + ", " + point.y);
 		tempPoints.add(point);
 		

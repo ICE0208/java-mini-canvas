@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 
 import main.MyFrame;
+import main.PointInfo;
 import mylistener.PaintListener;
 
 public class PaintPanel extends JPanel {
@@ -24,32 +25,23 @@ public class PaintPanel extends JPanel {
 	 @Override
 	 public void paint(Graphics g){
 		 super.paint(g);
-		 
-		 Point startP;
-		 Point endP;
-		
-		 
-	
+		 	
 		 Graphics2D g2 = (Graphics2D) g;
 		 g2.setColor(Color.BLACK);
 		 g2.setStroke(new BasicStroke(5));
-//		 for(int i=0; i<MyFrame.points.size(); i++) {
-//			 Point point = MyFrame.points.get(i);
-//			 g.fillOval(point.x, point.y, 10, 10);
-//		 }
-//		 System.out.println(MyFrame.points.size());
 		 
-		 ArrayList<Point> paintingPoints = PaintListener.tempPoints;
+		 ArrayList<PointInfo> paintingPoints = PaintListener.tempPoints;
 		 if (paintingPoints != null && paintingPoints.size() > 0) {
-			 Point startP2;
-			 Point endP2;
+			 PointInfo startP;
+			 PointInfo endP;
 			 
-			 startP2 = paintingPoints.get(0);
+			 startP = paintingPoints.get(0);
+			 g2.setColor(startP.color);
+			 g2.setStroke(startP.stroke);
 			 for(int j=0; j<paintingPoints.size(); j++) {
-				 endP2 = paintingPoints.get(j);
-//				 g.drawLine(startP.x, startP.y, endP.x, endP.y);
-				 g2.draw(new Line2D.Float(startP2.x, startP2.y, endP2.x, endP2.y));
-				 startP2 = endP2;
+				 endP = paintingPoints.get(j);
+				 g2.draw(new Line2D.Float(startP.x, startP.y, endP.x, endP.y));
+				 startP = endP;
 			 }
 			 
 		 }
@@ -57,9 +49,14 @@ public class PaintPanel extends JPanel {
 		 
 		 if (MyFrame.points.size() < 1) return;
 		 for (int i=0; i<MyFrame.points.size(); i++) {
-			 ArrayList<Point> pointObject = MyFrame.points.get(i);
+			 PointInfo startP;
+			 PointInfo endP;
+			 
+			 ArrayList<PointInfo> pointObject = MyFrame.points.get(i);
 			 
 			 startP = pointObject.get(0);
+			 g2.setColor(startP.color);
+			 g2.setStroke(startP.stroke);
 			 for(int j=0; j<pointObject.size(); j++) {
 				 endP = pointObject.get(j);
 //				 g.drawLine(startP.x, startP.y, endP.x, endP.y);

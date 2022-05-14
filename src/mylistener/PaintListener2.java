@@ -7,6 +7,7 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
 import main.MyFrame;
+import main.PointInfo;
 import mypanel.PaintPanel;
 
 public class PaintListener2 extends MouseAdapter {
@@ -20,8 +21,9 @@ public class PaintListener2 extends MouseAdapter {
 	@Override
 	public void mousePressed(MouseEvent e) {
 //		System.out.println("Press");
-		PaintListener.tempPoints = new ArrayList<Point>();
-		PaintListener.tempPoints.add(e.getPoint());
+		PaintListener.tempPoints = new ArrayList<PointInfo>();
+		PaintListener.tempPoints.add(new PointInfo(e.getX(), e.getY(), 
+				MyFrame.selectedColor, MyFrame.selectedStroke));
 		
 	}
 		

@@ -8,4 +8,11 @@ public class PointInfo {
 	public int y;
 	public Color color;
 	public BasicStroke stroke;
+	
+	public PointInfo(int x, int y, Color color, BasicStroke stroke) {
+		this.x = x;
+		this.y = y;
+		this.color = color;
+		this.stroke = stroke;
+	}
 }

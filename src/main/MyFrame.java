@@ -17,9 +17,9 @@ import mypanel.*;
 
 @SuppressWarnings("serial")
 public class MyFrame extends JFrame{
-	static Color selectedColor;
-	static BasicStroke selectedStroke;
-	public static ArrayList<ArrayList<Point>> points = new ArrayList<ArrayList<Point>>();
+	static public Color selectedColor;
+	static public BasicStroke selectedStroke;
+	public static ArrayList<ArrayList<PointInfo>> points = new ArrayList<ArrayList<PointInfo>>();
 	
 	Container c = getContentPane();
 	MyFrame myFrame = this;
