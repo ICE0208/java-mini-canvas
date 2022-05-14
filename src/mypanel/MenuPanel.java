@@ -8,10 +8,15 @@ import javax.swing.event.*;
 import main.MyFrame;
 import mylistener.SaveListener;
 import mylistener.UndoListener;
+import mylistener.ColorListener;
 import mylistener.RemoveAllListener;
 
 public class MenuPanel extends JPanel {
 	public MenuPanel(MyFrame myFrame) {
+		
+		JButton colorSelector = new JButton("Color");
+		colorSelector.addActionListener(new ColorListener());
+		add(colorSelector);
 		
 		// Undo Button
 		JButton undoButton = new JButton("Undo");
