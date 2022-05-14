@@ -14,26 +14,28 @@ import javax.swing.event.*;
 import mylistener.*;
 import mypanel.*;
 
+
+@SuppressWarnings("serial")
 public class MyFrame extends JFrame{
 	static Color selectedColor;
+	static BasicStroke selectedStroke;
 	public static ArrayList<ArrayList<Point>> points = new ArrayList<ArrayList<Point>>();
 	
 	Container c = getContentPane();
 	MyFrame myFrame = this;
-	
+	SettingManager settingManager = new SettingManager(myFrame);
 	
 	PaintPanel paintPanel = new PaintPanel();
 	MenuPanel menuPanel = new MenuPanel(myFrame);
 	
-	public PaintPanel getPaintPanel() {
-		
+	public PaintPanel getPaintPanel() {	
 		return paintPanel;
 	}
 
 
 	MyFrame(){
 		// 제목, 크기 등 기본 JFrame 설정
-		SettingManager settingManager = new SettingManager(myFrame);
+		settingManager.resetSettings();
 		c.setLayout(new BorderLayout());
 		
 		c.add(menuPanel, BorderLayout.NORTH);

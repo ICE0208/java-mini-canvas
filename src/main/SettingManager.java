@@ -1,19 +1,45 @@
 package main;
 
+import java.awt.BasicStroke;
+import java.awt.Color;
+import java.util.ArrayList;
+
 import javax.swing.JFrame;
 
 public class SettingManager {
 	JFrame jFrame;
+	static private ArrayList<BasicStroke> bStrokes = new ArrayList<BasicStroke>();
+	
 	
 	public SettingManager(JFrame j) {
 		this.jFrame = j;
-		resetSettings();
+		
+		for (int i=0; i<11; i++) {
+			bStrokes.add(new BasicStroke(i));
+		}
 	}
 	
-	private void resetSettings() {
-		jFrame.setTitle("GUI");
+	public void resetSettings() {
+		// Default Frame Settings
+		jFrame.setTitle("MINI CANVAS");
 		jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jFrame.setSize(1000, 600);
 //		jFrame.setResizable(false);
+		
+		// Default Drawing Settings
+		SettingManager.setColor(Color.BLACK);
+		SettingManager.setStroke(5);
 	}
+	
+	static public void setColor(Color color) {
+		MyFrame.selectedColor = color;
+	}
+	
+	static public void setStroke(int stroke) {
+		if (stroke < 0 || stroke > 10) {
+			System.out.println("Error in setStroke -> selectedStroke was not changed");
+		}
+		MyFrame.selectedStroke = SettingManager.bStrokes.get(stroke);
+	}
+	
 }

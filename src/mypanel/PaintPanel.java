@@ -17,7 +17,7 @@ import mylistener.PaintListener;
 public class PaintPanel extends JPanel {
 	
 	public PaintPanel() {
-		setBackground(Color.PINK);
+		setBackground(Color.WHITE);
 //		repaint();
 	}
 	
