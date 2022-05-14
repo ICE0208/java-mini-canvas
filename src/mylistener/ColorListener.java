@@ -12,6 +12,7 @@ public class ColorListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Color pickedColor = JColorChooser.showDialog(null, "Choose a color", Color.RED);
+		if (pickedColor == null) return;
 		SettingManager.setColor(pickedColor);
 	}
 }
