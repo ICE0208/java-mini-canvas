@@ -11,6 +11,7 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.event.*;
 
+import Managers.CursorManager;
 import Managers.SettingManager;
 import mylistener.*;
 import mypanel.*;
@@ -27,11 +28,12 @@ public class MyFrame extends JFrame{
 	public static ArrayList<ArrayList<PointInfo>> points = new ArrayList<ArrayList<PointInfo>>();
 	public static PointsHistory pointsHistory = new PointsHistory();
 	
-	Container c = getContentPane();
-	MyFrame myFrame = this;
+	public Container c = getContentPane();
+	public MyFrame myFrame = this;
 	SettingManager settingManager = new SettingManager(myFrame);
+	public CursorManager cursorManager = new CursorManager(myFrame);
 	
-	public static PaintPanel paintPanel = new PaintPanel();
+	public PaintPanel paintPanel = new PaintPanel();
 	public MenuPanel menuPanel = new MenuPanel(myFrame);
 
 
@@ -39,6 +41,7 @@ public class MyFrame extends JFrame{
 		// Set Default Settings
 		settingManager.resetSettings();
 		c.setLayout(new BorderLayout());
+		cursorManager.setPenCursor();
 		
 		c.add(menuPanel, BorderLayout.NORTH);
 		
@@ -47,17 +50,8 @@ public class MyFrame extends JFrame{
 		paintPanel.addMouseListener(new PaintSEListener());
 		
 		setVisible(true);
+		requestFocus();
 	}
- 
-	
 
-	
-	
-	public static void main(String[] args) {
-//		System.setProperty("apple.laf.useScreenMenuBar", "true");
-		System.setProperty("apple.awt.application.appearance", "system"); // Apple Appearance (able to be Dark Mode)
-		MyFrame mf = new MyFrame();
-		
-	}
 
 }

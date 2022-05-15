@@ -30,7 +30,7 @@ public class SettingManager {
 		
 		// Default Drawing Settings
 		SettingManager.setColor(Color.BLACK);
-		SettingManager.setStroke(5);
+		SettingManager.setStroke(4);
 	}
 	
 	static public void setColor(Color color) {

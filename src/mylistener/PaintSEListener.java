@@ -6,6 +6,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
+import Managers.CursorManager;
+import main.Main;
 import main.MyFrame;
 import mypanel.PaintPanel;
 import point.PointInfo;
@@ -27,12 +29,5 @@ public class PaintSEListener extends MouseAdapter {
 		PaintingListener.tempPoints.add(new PointInfo(e.getX(), e.getY(), 
 				MyFrame.selectedColor, MyFrame.selectedStroke));
 	}
-	
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		
-	}
-		
-		
 		
 }

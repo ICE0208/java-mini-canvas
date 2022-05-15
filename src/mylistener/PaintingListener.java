@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
+import main.Main;
 import main.MyFrame;
 import mypanel.PaintPanel;
 import point.PointInfo;
@@ -32,4 +33,9 @@ public class PaintingListener extends MouseMotionAdapter {
 		
 		paintPanel.repaint();
 	}
+	
+	@Override
+	public void mouseMoved(MouseEvent e) {
+	}
+	
 }

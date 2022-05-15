@@ -17,13 +17,8 @@ import point.PointInfo;
 
 public class PaintPanel extends JPanel {
 	
-	int curMode;
-	static final int PENMODE = 0;
-	static final int ERASERMODE = 1;
-	
 	public PaintPanel() {
 		setBackground(Color.WHITE);
-		this.curMode = PENMODE;
 	}
 	
 	 @Override
@@ -65,9 +60,6 @@ public class PaintPanel extends JPanel {
 				 startP = endP;
 			 }
 		 }
-		
-		 
-//		 g.fillOval(startX, startY, 10, 10); // x, y 지점에 70,70 크기의 원 그리기
 	 }
 	 
 
