@@ -22,8 +22,8 @@ import point.PointsHistory;
 
 @SuppressWarnings("serial")
 public class MyFrame extends JFrame{
-	static public Color selectedColor;
-	static public BasicStroke selectedStroke;
+	public static Color selectedColor;
+	public static BasicStroke selectedStroke;
 	public static ArrayList<ArrayList<PointInfo>> points = new ArrayList<ArrayList<PointInfo>>();
 	public static PointsHistory pointsHistory = new PointsHistory();
 	
@@ -31,7 +31,7 @@ public class MyFrame extends JFrame{
 	MyFrame myFrame = this;
 	SettingManager settingManager = new SettingManager(myFrame);
 	
-	public PaintPanel paintPanel = new PaintPanel();
+	public static PaintPanel paintPanel = new PaintPanel();
 	public MenuPanel menuPanel = new MenuPanel(myFrame);
 
 
@@ -53,14 +53,11 @@ public class MyFrame extends JFrame{
 
 	
 	
-	
 	public static void main(String[] args) {
 //		System.setProperty("apple.laf.useScreenMenuBar", "true");
 		System.setProperty("apple.awt.application.appearance", "system"); // Apple Appearance (able to be Dark Mode)
 		MyFrame mf = new MyFrame();
 		
-		
-
 	}
 
 }

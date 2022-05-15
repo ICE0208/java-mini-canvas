@@ -13,15 +13,15 @@ import mylistener.ColorListener;
 import mylistener.RemoveAllListener;
 
 public class MenuPanel extends JPanel {
-	public Container selectedColor = new SelectedColor();
+	public Container seleColor = new selectedColorContainer();
 	public MenuPanel(MyFrame myFrame) {
 		
-		System.out.println(selectedColor.getSize());
-		add(selectedColor);
+		seleColor.addMouseListener(new ColorListener(myFrame));
+		add(seleColor);
 		
-		JButton colorSelector = new JButton("Color");
-		colorSelector.addActionListener(new ColorListener(myFrame));
-		add(colorSelector);
+//		JButton colorSelector = new JButton("Color");
+//		colorSelector.addActionListener(new ColorListener(myFrame));
+//		add(colorSelector);
 		
 		// Undo Button
 		JButton undoButton = new JButton("Undo");
@@ -45,10 +45,10 @@ public class MenuPanel extends JPanel {
 		add(saveButton);
 	}
 
-	class SelectedColor extends Container {
+	class selectedColorContainer extends Container {
 		static final int SIZE = 16;
 		
-		public SelectedColor() {
+		public selectedColorContainer() {
 			setPreferredSize(new Dimension(SIZE, SIZE));
 		}
 		

@@ -27,7 +27,11 @@ public class PaintSEListener extends MouseAdapter {
 		PaintingListener.tempPoints.add(new PointInfo(e.getX(), e.getY(), 
 				MyFrame.selectedColor, MyFrame.selectedStroke));
 	}
+	
+	@Override
+	public void mouseClicked(MouseEvent e) {
 		
+	}
 		
 		
 		
