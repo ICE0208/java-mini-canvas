@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
+import main.Main;
 import main.MyFrame;
 import mypanel.PaintPanel;
 
@@ -18,6 +19,7 @@ public class RemoveAllListener implements ActionListener{
 		if (confirm == JOptionPane.NO_OPTION) return;
 		
 		MyFrame.points.clear();
+		MyFrame.pointsHistory.clear();
 		PaintingListener.paintPanel.repaint();
 	}
 
