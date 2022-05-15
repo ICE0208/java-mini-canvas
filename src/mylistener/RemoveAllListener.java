@@ -11,7 +11,7 @@ public class RemoveAllListener implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		MyFrame.points.clear();
 		
-		PaintListener.paintPanel.repaint();
+		PaintingListener.paintPanel.repaint();
 	}
 
 }

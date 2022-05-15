@@ -7,13 +7,14 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import Managers.SaveManager;
 import main.*;
 import mypanel.PaintPanel;
 
 public class SaveListener implements ActionListener {
 	private PaintPanel c;
 	private JFrame j;
-	Screenshot screenshot = new Screenshot();
+	SaveManager screenshot = new SaveManager();
 	
 	public SaveListener(PaintPanel c, JFrame j) {
 		super();

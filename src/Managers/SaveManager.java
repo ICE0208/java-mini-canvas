@@ -1,4 +1,4 @@
-package main;
+package Managers;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.FileDialog;
@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 
 import mypanel.PaintPanel;
 
-public class Screenshot {
+public class SaveManager {
 	PaintPanel c;
 	JFrame j;
 	

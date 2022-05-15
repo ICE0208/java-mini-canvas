@@ -1,8 +1,9 @@
-package main;
+package point;
 
 import java.util.ArrayList;
 
-import mylistener.PaintListener;
+import main.MyFrame;
+import mylistener.PaintingListener;
 
 public class PointsHistory {
 	private ArrayList<ArrayList<PointInfo>> history = new ArrayList<ArrayList<PointInfo>>();
@@ -26,6 +27,6 @@ public class PointsHistory {
 		ArrayList<PointInfo> redoTarget;
 		redoTarget = history.remove(historyLen-1);
 		MyFrame.points.add(redoTarget);
-		PaintListener.paintPanel.repaint();
+		PaintingListener.paintPanel.repaint();
 	}
 }

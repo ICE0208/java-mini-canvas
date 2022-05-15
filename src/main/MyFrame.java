@@ -11,9 +11,14 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.event.*;
 
+import Managers.SettingManager;
 import mylistener.*;
 import mypanel.*;
+import point.PointInfo;
+import point.PointsHistory;
 
+// ToDos
+// When mouseDragged in PaintPanel is True, All Menu listeners have to be inactive.
 
 @SuppressWarnings("serial")
 public class MyFrame extends JFrame{
@@ -26,24 +31,20 @@ public class MyFrame extends JFrame{
 	MyFrame myFrame = this;
 	SettingManager settingManager = new SettingManager(myFrame);
 	
-	PaintPanel paintPanel = new PaintPanel();
-	MenuPanel menuPanel = new MenuPanel(myFrame);
-	
-	public PaintPanel getPaintPanel() {	
-		return paintPanel;
-	}
+	public PaintPanel paintPanel = new PaintPanel();
+	public MenuPanel menuPanel = new MenuPanel(myFrame);
 
 
 	MyFrame(){
-		// 제목, 크기 등 기본 JFrame 설정
+		// Set Default Settings
 		settingManager.resetSettings();
 		c.setLayout(new BorderLayout());
 		
 		c.add(menuPanel, BorderLayout.NORTH);
-		c.add(paintPanel, BorderLayout.CENTER);
 		
-		paintPanel.addMouseMotionListener(new PaintListener(paintPanel));
-		paintPanel.addMouseListener(new PaintListener2());
+		c.add(paintPanel, BorderLayout.CENTER);
+		paintPanel.addMouseMotionListener(new PaintingListener(paintPanel));
+		paintPanel.addMouseListener(new PaintSEListener());
 		
 		setVisible(true);
 	}

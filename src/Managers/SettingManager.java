@@ -1,10 +1,12 @@
-package main;
+package Managers;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
+
+import main.MyFrame;
 
 public class SettingManager {
 	JFrame jFrame;
