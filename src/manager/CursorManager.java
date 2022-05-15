@@ -6,15 +6,18 @@ import java.awt.Point;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
+
+import main.Main;
 import main.MyFrame;
 
 public class CursorManager {
 	private static Toolkit tk = Toolkit.getDefaultToolkit();
-	private static final Image PENIMAGE = tk.getImage("./src/img/pen.png");
+	private static ImageIcon PENICON = new ImageIcon(Main.class.getResource("/img/pen.png"));
+	private static Image PENIMAGE = PENICON.getImage();
 	Point point = new Point(0, 30);
-	Cursor cursor = tk.createCustomCursor(PENIMAGE, point, "pen");
 	@SuppressWarnings("serial")
-	private static final ArrayList<Cursor> cursorList = new ArrayList<Cursor>() {{
+	private static ArrayList<Cursor> cursorList = new ArrayList<Cursor>() {{
 		add(tk.createCustomCursor(PENIMAGE, new Point(0, 30), "pen"));
 	}};
 	
