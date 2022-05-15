@@ -12,14 +12,13 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 
 import main.MyFrame;
-import main.PointInfo;
-import mylistener.PaintListener;
+import mylistener.PaintingListener;
+import point.PointInfo;
 
 public class PaintPanel extends JPanel {
 	
 	public PaintPanel() {
 		setBackground(Color.WHITE);
-//		repaint();
 	}
 	
 	 @Override
@@ -47,7 +46,7 @@ public class PaintPanel extends JPanel {
 		 }
 		 
 		 // PaintingPoints
-		 ArrayList<PointInfo> paintingPoints = PaintListener.tempPoints;
+		 ArrayList<PointInfo> paintingPoints = PaintingListener.tempPoints;
 		 if (paintingPoints != null && paintingPoints.size() > 0) {
 			 PointInfo startP;
 			 PointInfo endP;
@@ -61,13 +60,7 @@ public class PaintPanel extends JPanel {
 				 startP = endP;
 			 }
 		 }
-		
-		 
-//		 g.fillOval(startX, startY, 10, 10); // x, y 지점에 70,70 크기의 원 그리기
 	 }
 	 
-	 @Override
-	 public void update(Graphics g){
-		 paint(g);
-	 }
+
 }

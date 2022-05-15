@@ -1,5 +1,6 @@
 package mylistener;
 
+import java.awt.Color;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
@@ -8,34 +9,33 @@ import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
+import main.Main;
 import main.MyFrame;
-import main.PointInfo;
 import mypanel.PaintPanel;
+import point.PointInfo;
 
-public class PaintListener extends MouseMotionAdapter {
+public class PaintingListener extends MouseMotionAdapter {
 	
 	static public PaintPanel paintPanel;
 	public static ArrayList<PointInfo> tempPoints = null;
 	
-	public PaintListener(PaintPanel paintPanel) {
-		PaintListener.paintPanel = paintPanel;
-	}
-	
-	@Override
-	public void mouseMoved(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
+	public PaintingListener(PaintPanel paintPanel) {
+		PaintingListener.paintPanel = paintPanel;
 	}
 	
 	@Override
 	public void mouseDragged(MouseEvent e) {
-		if (PaintListener.tempPoints == null) return;
+		if (PaintingListener.tempPoints == null) return;
 		
 		PointInfo point = new PointInfo(e.getX(), e.getY(), 
 				MyFrame.selectedColor, MyFrame.selectedStroke);
-//		System.out.println(point.x + ", " + point.y);
 		tempPoints.add(point);
 		
 		paintPanel.repaint();
 	}
+	
+	@Override
+	public void mouseMoved(MouseEvent e) {
+	}
+	
 }

@@ -2,8 +2,10 @@ package mylistener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import main.MyFrame;
+import point.PointInfo;
 
 public class UndoListener implements ActionListener {
 	@Override
@@ -11,8 +13,10 @@ public class UndoListener implements ActionListener {
 		int pointsLen = MyFrame.points.size();
 		if (pointsLen == 0) return;
 		
-		MyFrame.points.remove(pointsLen-1);
-		PaintListener.paintPanel.repaint();
+		ArrayList<PointInfo> removedPoint;
+		removedPoint = MyFrame.points.remove(pointsLen-1);
+		MyFrame.pointsHistory.add(removedPoint);
+		PaintingListener.paintPanel.repaint();
 		
 	}
 }

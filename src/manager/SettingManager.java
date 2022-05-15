@@ -1,10 +1,12 @@
-package main;
+package manager;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
+
+import main.MyFrame;
 
 public class SettingManager {
 	JFrame jFrame;
@@ -28,7 +30,7 @@ public class SettingManager {
 		
 		// Default Drawing Settings
 		SettingManager.setColor(Color.BLACK);
-		SettingManager.setStroke(5);
+		SettingManager.setStroke(4);
 	}
 	
 	static public void setColor(Color color) {

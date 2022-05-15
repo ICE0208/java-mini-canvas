@@ -8,12 +8,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import main.*;
+import manager.SaveManager;
 import mypanel.PaintPanel;
 
 public class SaveListener implements ActionListener {
 	private PaintPanel c;
 	private JFrame j;
-	Screenshot screenshot = new Screenshot();
+	SaveManager screenshot = new SaveManager();
 	
 	public SaveListener(PaintPanel c, JFrame j) {
 		super();

@@ -11,54 +11,44 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.event.*;
 
+import manager.CursorManager;
+import manager.SettingManager;
 import mylistener.*;
 import mypanel.*;
-
+import point.PointInfo;
+import point.PointsHistory;
 
 @SuppressWarnings("serial")
 public class MyFrame extends JFrame{
-	static public Color selectedColor;
-	static public BasicStroke selectedStroke;
+	public static Color selectedColor;
+	public static BasicStroke selectedStroke;
 	public static ArrayList<ArrayList<PointInfo>> points = new ArrayList<ArrayList<PointInfo>>();
+	public static PointsHistory pointsHistory = new PointsHistory();
 	
-	Container c = getContentPane();
-	MyFrame myFrame = this;
+	public Container c = getContentPane();
+	public MyFrame myFrame = this;
 	SettingManager settingManager = new SettingManager(myFrame);
+	public CursorManager cursorManager = new CursorManager(myFrame);
 	
-	PaintPanel paintPanel = new PaintPanel();
-	MenuPanel menuPanel = new MenuPanel(myFrame);
-	
-	public PaintPanel getPaintPanel() {	
-		return paintPanel;
-	}
+	public PaintPanel paintPanel = new PaintPanel();
+	public MenuPanel menuPanel = new MenuPanel(myFrame);
 
 
 	MyFrame(){
-		// 제목, 크기 등 기본 JFrame 설정
+		// Set Default Settings
 		settingManager.resetSettings();
 		c.setLayout(new BorderLayout());
+		cursorManager.setPenCursor();
 		
 		c.add(menuPanel, BorderLayout.NORTH);
-		c.add(paintPanel, BorderLayout.CENTER);
 		
-		paintPanel.addMouseMotionListener(new PaintListener(paintPanel));
-		paintPanel.addMouseListener(new PaintListener2());
+		c.add(paintPanel, BorderLayout.CENTER);
+		paintPanel.addMouseMotionListener(new PaintingListener(paintPanel));
+		paintPanel.addMouseListener(new PaintSEListener());
 		
 		setVisible(true);
+		requestFocus();
 	}
- 
-	
 
-	
-	
-	
-	public static void main(String[] args) {
-//		System.setProperty("apple.laf.useScreenMenuBar", "true");
-		System.setProperty("apple.awt.application.appearance", "system"); // Apple Appearance (able to be Dark Mode)
-		MyFrame mf = new MyFrame();
-		
-		
-
-	}
 
 }
