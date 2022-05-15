@@ -9,3 +9,7 @@ public class Main {
 		
 	}
 }
+
+//ToDos
+// When mouseDragged in PaintPanel is True, All Menu listeners have to be inactive.
+// When a file with same name in selected path exists, Show ConfirmDialog (replace or no)

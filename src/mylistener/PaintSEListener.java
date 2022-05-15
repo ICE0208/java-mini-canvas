@@ -6,9 +6,9 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
-import Managers.CursorManager;
 import main.Main;
 import main.MyFrame;
+import manager.CursorManager;
 import mypanel.PaintPanel;
 import point.PointInfo;
 import point.PointsHistory;

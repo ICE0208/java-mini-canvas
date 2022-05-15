@@ -1,4 +1,4 @@
-package Managers;
+package manager;
 
 import java.awt.Cursor;
 import java.awt.Image;

@@ -6,8 +6,8 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.JColorChooser;
 
-import Managers.SettingManager;
 import main.MyFrame;
+import manager.SettingManager;
 import mypanel.MenuPanel;
 
 public class ColorListener extends MouseAdapter {

@@ -11,15 +11,12 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.event.*;
 
-import Managers.CursorManager;
-import Managers.SettingManager;
+import manager.CursorManager;
+import manager.SettingManager;
 import mylistener.*;
 import mypanel.*;
 import point.PointInfo;
 import point.PointsHistory;
-
-// ToDos
-// When mouseDragged in PaintPanel is True, All Menu listeners have to be inactive.
 
 @SuppressWarnings("serial")
 public class MyFrame extends JFrame{
