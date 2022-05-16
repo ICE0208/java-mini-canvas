@@ -4,6 +4,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
+import javax.swing.SwingUtilities;
+
 import main.MyFrame;
 import point.PointInfo;
 
@@ -11,7 +13,7 @@ import point.PointInfo;
 public class PaintSEListener extends MouseAdapter {
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		if (e.getButton() != MouseEvent.BUTTON1) return;
+		if (!SwingUtilities.isLeftMouseButton(e)) return;
 		MyFrame.points.add(PaintingListener.tempPoints);
 		PaintingListener.tempPoints = null;
 		PaintingListener.paintPanel.repaint();
@@ -19,7 +21,7 @@ public class PaintSEListener extends MouseAdapter {
 	
 	@Override
 	public void mousePressed(MouseEvent e) {
-		if (e.getButton() != MouseEvent.BUTTON1) return;
+		if (!SwingUtilities.isLeftMouseButton(e)) return;
 		MyFrame.pointsHistory.clear();
 		PaintingListener.tempPoints = new ArrayList<PointInfo>();
 		PaintingListener.tempPoints.add(new PointInfo(e.getX(), e.getY(), 

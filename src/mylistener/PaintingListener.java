@@ -4,6 +4,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.util.ArrayList;
 
+import javax.swing.SwingUtilities;
+
 import main.MyFrame;
 import mypanel.PaintPanel;
 import point.PointInfo;
@@ -19,7 +21,7 @@ public class PaintingListener extends MouseMotionAdapter {
 	
 	@Override
 	public void mouseDragged(MouseEvent e) {
-		if (e.getButton() != MouseEvent.BUTTON1) return;
+		if (!SwingUtilities.isLeftMouseButton(e)) return;
 		if (PaintingListener.tempPoints == null) return;
 		
 		PointInfo point = new PointInfo(e.getX(), e.getY(), 
