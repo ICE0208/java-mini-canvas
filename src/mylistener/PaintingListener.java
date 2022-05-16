@@ -25,6 +25,7 @@ public class PaintingListener extends MouseMotionAdapter {
 	
 	@Override
 	public void mouseDragged(MouseEvent e) {
+		if (e.getButton() != MouseEvent.BUTTON1) return;
 		if (PaintingListener.tempPoints == null) return;
 		
 		PointInfo point = new PointInfo(e.getX(), e.getY(), 
