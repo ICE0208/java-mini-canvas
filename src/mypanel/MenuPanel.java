@@ -1,17 +1,12 @@
 package mypanel;
 
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
 
 import main.MyFrame;
-import mylistener.SaveListener;
-import mylistener.UndoListener;
-import mylistener.RedoListener;
-import mylistener.ColorListener;
-import mylistener.RemoveAllListener;
+import mylistener.*;
 
+@SuppressWarnings("serial")
 public class MenuPanel extends JPanel {
 	public Container seleColor = new selectedColorContainer();
 	public MenuPanel(MyFrame myFrame) {
@@ -19,9 +14,15 @@ public class MenuPanel extends JPanel {
 		seleColor.addMouseListener(new ColorListener(myFrame));
 		add(seleColor);
 		
-//		JButton colorSelector = new JButton("Color");
-//		colorSelector.addActionListener(new ColorListener(myFrame));
-//		add(colorSelector);
+		JButton selectPen = new JButton("Pen");
+		selectPen.addActionListener(new PenListener());
+		add(selectPen);
+		
+		JButton selectEraser = new JButton("Eraser");
+		selectEraser.addActionListener(new EraserListener());
+		add(selectEraser);
+		
+		add(new JSeparator(SwingConstants.VERTICAL)); // ????
 		
 		// Undo Button
 		JButton undoButton = new JButton("Undo");

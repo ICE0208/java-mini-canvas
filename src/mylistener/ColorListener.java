@@ -6,9 +6,10 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.JColorChooser;
 
+import main.Main;
 import main.MyFrame;
+import manager.CursorManager;
 import manager.SettingManager;
-import mypanel.MenuPanel;
 
 public class ColorListener extends MouseAdapter {
 	MyFrame myFrame;
@@ -23,6 +24,7 @@ public class ColorListener extends MouseAdapter {
 		if (pickedColor == null) return;
 		SettingManager.setColor(pickedColor);
 		myFrame.menuPanel.seleColor.repaint();
+		Main.myFrame.cursorManager.setPenCursor(CursorManager.PEN);
 	}
 	
 	public ColorListener(MyFrame myFrame) {
