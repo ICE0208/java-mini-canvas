@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import main.MyFrame;
 
-public class RedoListener implements ActionListener {
+public class TempRedoListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		MyFrame.pointsHistory.redo();

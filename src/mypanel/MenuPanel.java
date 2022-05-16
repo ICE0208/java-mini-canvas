@@ -31,7 +31,7 @@ public class MenuPanel extends JPanel {
 		
 		// Redo Button
 		JButton redoButton = new JButton("Redo");
-		redoButton.addActionListener(new RedoListener());
+		redoButton.addActionListener(new TempRedoListener());
 		add(redoButton);
 		
 		// Remove All Button
