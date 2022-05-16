@@ -14,7 +14,7 @@ public class RemoveAllListener implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		// Remove All Confirm
 		int confirm = JOptionPane.showConfirmDialog(null, MESSAGE, "Confirm", JOptionPane.YES_NO_OPTION);
-		if (confirm == JOptionPane.NO_OPTION) return;
+		if (confirm != JOptionPane.YES_OPTION) return;
 		
 		MyFrame.points.clear();
 		MyFrame.pointsHistory.clear();
