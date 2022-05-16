@@ -10,6 +10,8 @@ import mylistener.SaveListener;
 import mylistener.UndoListener;
 import mylistener.RedoListener;
 import mylistener.ColorListener;
+import mylistener.EraserListener;
+import mylistener.PenListener;
 import mylistener.RemoveAllListener;
 
 public class MenuPanel extends JPanel {
@@ -19,9 +21,15 @@ public class MenuPanel extends JPanel {
 		seleColor.addMouseListener(new ColorListener(myFrame));
 		add(seleColor);
 		
-//		JButton colorSelector = new JButton("Color");
-//		colorSelector.addActionListener(new ColorListener(myFrame));
-//		add(colorSelector);
+		JButton selectPen = new JButton("Pen");
+		selectPen.addActionListener(new PenListener());
+		add(selectPen);
+		
+		JButton selectEraser = new JButton("Eraser");
+		selectEraser.addActionListener(new EraserListener());
+		add(selectEraser);
+		
+		add(new JSeparator(SwingConstants.VERTICAL)); // ????
 		
 		// Undo Button
 		JButton undoButton = new JButton("Undo");

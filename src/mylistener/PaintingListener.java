@@ -29,7 +29,7 @@ public class PaintingListener extends MouseMotionAdapter {
 		if (PaintingListener.tempPoints == null) return;
 		
 		PointInfo point = new PointInfo(e.getX(), e.getY(), 
-				MyFrame.selectedColor, MyFrame.selectedStroke);
+				MyFrame.paintColor, MyFrame.selectedStroke);
 		tempPoints.add(point);
 		
 		paintPanel.repaint();

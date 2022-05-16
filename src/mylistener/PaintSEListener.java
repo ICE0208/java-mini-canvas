@@ -29,7 +29,7 @@ public class PaintSEListener extends MouseAdapter {
 		MyFrame.pointsHistory.clear();
 		PaintingListener.tempPoints = new ArrayList<PointInfo>();
 		PaintingListener.tempPoints.add(new PointInfo(e.getX(), e.getY(), 
-				MyFrame.selectedColor, MyFrame.selectedStroke));
+				MyFrame.paintColor, MyFrame.selectedStroke));
 	}
 		
 }

@@ -34,6 +34,7 @@ public class SettingManager {
 	}
 	
 	static public void setColor(Color color) {
+		MyFrame.paintColor = color;
 		MyFrame.selectedColor = color;
 	}
 	
