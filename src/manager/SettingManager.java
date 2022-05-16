@@ -23,7 +23,7 @@ public class SettingManager {
 	
 	public void resetSettings() {
 		// Default Frame Settings
-		jFrame.setTitle("MINI CANVAS v0.1.0");
+		jFrame.setTitle("MINI CANVAS v0.2.0");
 		jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jFrame.setSize(1000, 600);
 //		jFrame.setResizable(false);

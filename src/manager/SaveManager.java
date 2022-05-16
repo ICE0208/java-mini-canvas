@@ -1,8 +1,5 @@
 package manager;
-import java.awt.Component;
-import java.awt.Container;
 import java.awt.FileDialog;
-import java.awt.Frame;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -10,7 +7,6 @@ import java.io.File;
 import javax.imageio.ImageIO;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 import mypanel.PaintPanel;
 

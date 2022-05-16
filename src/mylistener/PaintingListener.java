@@ -1,15 +1,9 @@
 package mylistener;
 
-import java.awt.Color;
-import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
-import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
-import javax.swing.JPanel;
-
-import main.Main;
 import main.MyFrame;
 import mypanel.PaintPanel;
 import point.PointInfo;

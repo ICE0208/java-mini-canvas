@@ -1,19 +1,12 @@
 package mypanel;
 
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
 
 import main.MyFrame;
-import mylistener.SaveListener;
-import mylistener.UndoListener;
-import mylistener.RedoListener;
-import mylistener.ColorListener;
-import mylistener.EraserListener;
-import mylistener.PenListener;
-import mylistener.RemoveAllListener;
+import mylistener.*;
 
+@SuppressWarnings("serial")
 public class MenuPanel extends JPanel {
 	public Container seleColor = new selectedColorContainer();
 	public MenuPanel(MyFrame myFrame) {

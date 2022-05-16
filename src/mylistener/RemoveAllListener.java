@@ -5,9 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
-import main.Main;
 import main.MyFrame;
-import mypanel.PaintPanel;
 
 public class RemoveAllListener implements ActionListener{
 	private static final String MESSAGE = "모두 지우시겠습니까? 이 기능을 수행하면 되돌릴 수 없습니다.";

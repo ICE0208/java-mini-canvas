@@ -1,17 +1,11 @@
 package mylistener;
 
-import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
-import main.Main;
 import main.MyFrame;
-import manager.CursorManager;
-import mypanel.PaintPanel;
 import point.PointInfo;
-import point.PointsHistory;
 
 // SE's meaning : Start/End
 public class PaintSEListener extends MouseAdapter {

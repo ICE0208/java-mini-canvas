@@ -10,7 +10,6 @@ import main.Main;
 import main.MyFrame;
 import manager.CursorManager;
 import manager.SettingManager;
-import mypanel.MenuPanel;
 
 public class ColorListener extends MouseAdapter {
 	MyFrame myFrame;
