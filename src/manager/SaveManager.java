@@ -8,7 +8,6 @@ import javax.imageio.ImageIO;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 
-import main.Main;
 import mypanel.PaintPanel;
 
 public class SaveManager {
@@ -36,7 +35,6 @@ public class SaveManager {
 		}
 		
 		saveTrying = false;
-		Main.myFrame.menuPanel.requestFocus();
     }
 	
 	private String getSavePath() throws Exception {

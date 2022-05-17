@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 
+import main.Main;
 import manager.ButtonManager;
 import manager.SaveManager;
 import mypanel.PaintPanel;
@@ -23,6 +24,7 @@ public class SaveListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		doSave();
+		Main.myFrame.menuPanel.requestFocus();
 	}
 	
 	public void doSave() {

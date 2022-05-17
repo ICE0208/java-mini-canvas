@@ -12,6 +12,7 @@ public class MenuPanel extends JPanel {
 	public Container seleColor = new selectedColorContainer();
 	public SaveListener saveListener;
 	public UndoListener undoListener;
+	public RedoListener redoListener;
 	
 	public MenuPanel(MyFrame myFrame) {
 		
@@ -36,11 +37,11 @@ public class MenuPanel extends JPanel {
 		undoButton.addActionListener(undoListener);
 		add(undoButton);
 		
-
 		
 		// Redo Button
 		JButton redoButton = new JButton("Redo");
-		redoButton.addActionListener(new RedoListener());
+		redoListener = new RedoListener();
+		redoButton.addActionListener(redoListener);
 		add(redoButton);
 		
 		// Remove All Button

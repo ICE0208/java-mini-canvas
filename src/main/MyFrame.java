@@ -1,6 +1,5 @@
 package main;
 import java.awt.*;
-
 import java.util.ArrayList;
 
 import javax.swing.*;
@@ -39,6 +38,7 @@ public class MyFrame extends JFrame{
 		c.add(paintPanel, BorderLayout.CENTER);
 		paintPanel.addMouseMotionListener(new PaintingListener(paintPanel));
 		paintPanel.addMouseListener(new PaintSEListener());
+	
 		
 		setVisible(true);
 		menuPanel.requestFocus();
