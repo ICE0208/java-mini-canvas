@@ -16,6 +16,7 @@ public class EraserListener implements ActionListener {
 		if (ButtonManager.canPressBtn() == false) return;
 		MyFrame.paintColor = Color.WHITE;
 		Main.myFrame.cursorManager.setPenCursor(CursorManager.ERASER);
+		Main.myFrame.menuPanel.requestFocus();
 	}
 
 }
