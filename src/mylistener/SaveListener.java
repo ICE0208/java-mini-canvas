@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 
+import manager.ButtonManager;
 import manager.SaveManager;
 import mypanel.PaintPanel;
 
@@ -21,6 +22,7 @@ public class SaveListener implements ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		if (ButtonManager.canPressBtn() == false) return;
 		screenshot.start(c, j);
 		
 	}

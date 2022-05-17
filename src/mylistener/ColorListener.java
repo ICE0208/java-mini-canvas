@@ -8,6 +8,7 @@ import javax.swing.JColorChooser;
 
 import main.Main;
 import main.MyFrame;
+import manager.ButtonManager;
 import manager.CursorManager;
 import manager.SettingManager;
 
@@ -15,11 +16,8 @@ public class ColorListener extends MouseAdapter {
 	MyFrame myFrame;
 	
 	@Override
-	public void mouseReleased(MouseEvent e) {
-	}
-	
-	@Override
 	public void mouseClicked(MouseEvent e) {
+		if (ButtonManager.canPressBtn() == false) return;
 		Color pickedColor = JColorChooser.showDialog(null, "Choose a color", Color.RED);
 		if (pickedColor == null) return;
 		SettingManager.setColor(pickedColor);

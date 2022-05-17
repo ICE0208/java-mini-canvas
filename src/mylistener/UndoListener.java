@@ -5,11 +5,13 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import main.MyFrame;
+import manager.ButtonManager;
 import point.PointInfo;
 
 public class UndoListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		if (ButtonManager.canPressBtn() == false) return;
 		int pointsLen = MyFrame.points.size();
 		if (pointsLen == 0) return;
 		
