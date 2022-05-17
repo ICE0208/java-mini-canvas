@@ -8,13 +8,15 @@ import javax.imageio.ImageIO;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 
+import main.Main;
 import mypanel.PaintPanel;
 
 public class SaveManager {
 	PaintPanel c;
 	JFrame j;
+	public boolean saveTrying = false;
 	
-	public void start(PaintPanel c, JFrame j) {                                             
+	public void start(PaintPanel c, JFrame j) {    
 		this.c = c;
 		this.j = j;
 		BufferedImage image = new BufferedImage(c.getWidth(), c.getHeight(), BufferedImage.TYPE_INT_RGB);
@@ -32,6 +34,9 @@ public class SaveManager {
 		} catch (Exception e) {
 		    System.out.println("저장실패");
 		}
+		
+		saveTrying = false;
+		Main.myFrame.menuPanel.requestFocus();
     }
 	
 	private String getSavePath() throws Exception {

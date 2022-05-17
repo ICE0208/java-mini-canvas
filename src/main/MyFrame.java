@@ -41,7 +41,7 @@ public class MyFrame extends JFrame{
 		paintPanel.addMouseListener(new PaintSEListener());
 		
 		setVisible(true);
-		requestFocus();
+		menuPanel.requestFocus();
 	}
 
 
