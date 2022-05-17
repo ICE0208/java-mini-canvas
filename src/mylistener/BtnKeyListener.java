@@ -16,18 +16,30 @@ public class BtnKeyListener extends KeyAdapter {
 		oldInput = curInput;
 		curInput = e.getKeyCode();
 		System.out.println("old: " + oldInput + ", new: " + curInput);
-		SaveListener saveListener = Main.myFrame.menuPanel.saveListener;
-		if (oldInput == HOTKEY && curInput == KeyEvent.VK_S) {
-			System.out.println("try save");
-			if (saveListener.saveManager.saveTrying == true) return;
-			saveListener.saveManager.saveTrying  = true;
-			saveListener.doSave();
+		// Save on Mac
+		if (oldInput == HOTKEY) {
+			if (curInput == KeyEvent.VK_S) {
+				System.out.println("try save");
+				SaveListener saveListener = Main.myFrame.menuPanel.saveListener;
+				if (saveListener.saveManager.saveTrying == true) return;
+				saveListener.saveManager.saveTrying  = true;
+				saveListener.doSave();
+				return;
+			}
+			if (curInput == KeyEvent.VK_Z) {
+				System.out.println("try undo");
+				Main.myFrame.menuPanel.undoListener.doUndo();
+				return;
+			}
 		}
+		
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		curInput = -1;
+		if (e.getKeyCode() != HOTKEY) {
+			curInput = oldInput;
+		}
 	}
 
 

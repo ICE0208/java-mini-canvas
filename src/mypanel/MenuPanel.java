@@ -11,6 +11,7 @@ import mylistener.*;
 public class MenuPanel extends JPanel {
 	public Container seleColor = new selectedColorContainer();
 	public SaveListener saveListener;
+	public UndoListener undoListener;
 	
 	public MenuPanel(MyFrame myFrame) {
 		
@@ -31,7 +32,8 @@ public class MenuPanel extends JPanel {
 		
 		// Undo Button
 		JButton undoButton = new JButton("Undo");
-		undoButton.addActionListener(new UndoListener());
+		undoListener = new UndoListener();
+		undoButton.addActionListener(undoListener);
 		add(undoButton);
 		
 

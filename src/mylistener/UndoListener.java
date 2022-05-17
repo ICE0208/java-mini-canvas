@@ -11,6 +11,10 @@ import point.PointInfo;
 public class UndoListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		doUndo();
+	}
+	
+	public void doUndo() {
 		if (ButtonManager.canPressBtn() == false) return;
 		int pointsLen = MyFrame.points.size();
 		if (pointsLen == 0) return;
@@ -19,6 +23,5 @@ public class UndoListener implements ActionListener {
 		removedPoint = MyFrame.points.remove(pointsLen-1);
 		MyFrame.pointsHistory.add(removedPoint);
 		PaintingListener.paintPanel.repaint();
-		
 	}
 }
