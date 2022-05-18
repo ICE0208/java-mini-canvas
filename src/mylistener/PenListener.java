@@ -15,6 +15,7 @@ public class PenListener implements ActionListener {
 		if (ButtonManager.canPressBtn() == false) return;
 		MyFrame.paintColor = MyFrame.selectedColor;
 		Main.myFrame.cursorManager.setPenCursor(CursorManager.PEN);
+		Main.myFrame.menuPanel.requestFocus();
 	}
 
 }

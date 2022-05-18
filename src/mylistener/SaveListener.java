@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 
+import main.Main;
 import manager.ButtonManager;
 import manager.SaveManager;
 import mypanel.PaintPanel;
@@ -12,7 +13,7 @@ import mypanel.PaintPanel;
 public class SaveListener implements ActionListener {
 	private PaintPanel c;
 	private JFrame j;
-	SaveManager screenshot = new SaveManager();
+	SaveManager saveManager = new SaveManager();
 	
 	public SaveListener(PaintPanel c, JFrame j) {
 		super();
@@ -22,8 +23,12 @@ public class SaveListener implements ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		doSave();
+		Main.myFrame.menuPanel.requestFocus();
+	}
+	
+	public void doSave() {
 		if (ButtonManager.canPressBtn() == false) return;
-		screenshot.start(c, j);
-		
+		saveManager.start(c, j);
 	}
 }
