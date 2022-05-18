@@ -1,5 +1,7 @@
 package main;
 import java.awt.*;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowFocusListener;
 import java.util.ArrayList;
 
 import javax.swing.*;
@@ -38,10 +40,28 @@ public class MyFrame extends JFrame{
 		c.add(paintPanel, BorderLayout.CENTER);
 		paintPanel.addMouseMotionListener(new PaintingListener(paintPanel));
 		paintPanel.addMouseListener(new PaintSEListener());
-	
 		
 		setVisible(true);
-		menuPanel.requestFocus();
+		addKeyListener(new BtnKeyListener());
+		addWindowFocusListener(new focus());
+		
+		requestFocus();
+	}
+	
+	class focus implements WindowFocusListener {
+
+		@Override
+		public void windowGainedFocus(WindowEvent e) {
+			Main.myFrame.requestFocus();
+			
+		}
+
+		@Override
+		public void windowLostFocus(WindowEvent e) {
+			if (PaintSEListener.painting == false) return;
+			PaintSEListener.forceMouseReleased();
+		}
+		
 	}
 
 

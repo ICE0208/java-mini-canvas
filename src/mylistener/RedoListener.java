@@ -11,7 +11,7 @@ public class RedoListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		doRedo();
-		Main.myFrame.menuPanel.requestFocus();
+		Main.myFrame.requestFocus();
 	}
 	
 	public void doRedo() {

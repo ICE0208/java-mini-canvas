@@ -34,10 +34,17 @@ public class BtnKeyListener extends KeyAdapter {
 		}
 		else return;
 		
-//		System.out.println(ary[0] + " | " + ary[1] + " | " + ary[2]);
 		
 		int aryLen = ary.length;
+		
+		for (Object object : ary) {
+			System.out.print(object + " ");
+		}
+		System.out.println();
+		
 		if (aryLen < 2) return;
+		
+		
 		// 2°³ Å° command + [ ]
 		if ((int)ary[aryLen-2] == HOTKEY) {
 			// Save
@@ -68,7 +75,7 @@ public class BtnKeyListener extends KeyAdapter {
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		if (keyQueue.contains(e.getKeyCode())) {
+		while (keyQueue.contains(e.getKeyCode())) {
 			keyQueue.remove(e.getKeyCode());
 		}
 		ary = keyQueue.toArray();

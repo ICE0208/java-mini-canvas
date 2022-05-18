@@ -14,10 +14,11 @@ public class RemoveAllListener implements ActionListener{
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		Main.myFrame.menuPanel.requestFocus();
+		Main.myFrame.requestFocus();
 		if (ButtonManager.canPressBtn() == false) return;
 		// Remove All Confirm
 		int confirm = JOptionPane.showConfirmDialog(null, MESSAGE, "Confirm", JOptionPane.YES_NO_OPTION);
+		Main.myFrame.requestFocus();
 		if (confirm != JOptionPane.YES_OPTION) return;
 		
 		MyFrame.points.clear();

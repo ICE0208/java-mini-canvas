@@ -23,6 +23,7 @@ public class ColorListener extends MouseAdapter {
 		SettingManager.setColor(pickedColor);
 		myFrame.menuPanel.seleColor.repaint();
 		Main.myFrame.cursorManager.setPenCursor(CursorManager.PEN);
+		Main.myFrame.requestFocus();
 	}
 	
 	public ColorListener(MyFrame myFrame) {
