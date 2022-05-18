@@ -1,5 +1,7 @@
 package main;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
 import java.util.ArrayList;
@@ -48,20 +50,52 @@ public class MyFrame extends JFrame{
 		requestFocus();
 	}
 	
+	boolean isDialong = false;
+	boolean isLost = false;
+	
+	public void forceFocus() {
+		// Reference
+		// https://stackoverflow.com/questions/12278546/focus-issues-with-java7-modal-dialogs-on-mac-osx
+		isDialong = true;
+		JDialog focusDialog = new JDialog(); 
+		focusDialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE); 
+		focusDialog.setUndecorated(true); 
+
+		System.out.println("Forcing Focus...");
+	    Timer timer = new Timer(50, new ActionListener() {
+	        public void actionPerformed(ActionEvent e) {
+	        	System.out.println("Focus Done!");
+	            focusDialog.dispose();
+	            isDialong = false;
+	        }
+	    });
+	    focusDialog.pack();
+	    focusDialog.setVisible(true);
+		timer.setRepeats(false);
+		timer.start();
+	}
+		
+	
 	class focus implements WindowFocusListener {
 
 		@Override
 		public void windowGainedFocus(WindowEvent e) {
 			Main.myFrame.requestFocus();
+			if (isLost == false) return;
+			isLost = false;
+			forceFocus();
 			
 		}
 
 		@Override
 		public void windowLostFocus(WindowEvent e) {
+			if (isDialong == false) {
+				isLost = true;
+			}
+			
 			if (PaintSEListener.painting == false) return;
 			PaintSEListener.forceMouseReleased();
 		}
-		
 	}
 
 
