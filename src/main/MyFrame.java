@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 import manager.CursorManager;
+import manager.FocusManager;
 import manager.SettingManager;
+import manager.ShortCutManager;
 import mylistener.*;
 import mypanel.*;
 import point.*;
@@ -20,11 +22,13 @@ public class MyFrame extends JFrame{
 	
 	public Container c = getContentPane();
 	public MyFrame myFrame = this;
-	SettingManager settingManager = new SettingManager(myFrame);
 	public CursorManager cursorManager = new CursorManager(myFrame);
 	
 	public PaintPanel paintPanel = new PaintPanel();
 	public MenuPanel menuPanel = new MenuPanel(myFrame);
+	
+	SettingManager settingManager = new SettingManager(myFrame);
+	ShortCutManager shortCutManager = new ShortCutManager(menuPanel);
 
 
 	MyFrame(){
@@ -38,11 +42,12 @@ public class MyFrame extends JFrame{
 		c.add(paintPanel, BorderLayout.CENTER);
 		paintPanel.addMouseMotionListener(new PaintingListener(paintPanel));
 		paintPanel.addMouseListener(new PaintSEListener());
-	
-		
-		setVisible(true);
-		menuPanel.requestFocus();
-	}
+			
+		shortCutManager.setShortCutAll();
 
+		setVisible(true);
+		setFocusable(true);
+		addWindowFocusListener(new FocusManager());
+	}
 
 }

@@ -23,6 +23,7 @@ public class PaintingListener extends MouseMotionAdapter {
 	public void mouseDragged(MouseEvent e) {
 		if (!SwingUtilities.isLeftMouseButton(e)) return;
 		if (PaintingListener.tempPoints == null) return;
+		if (PaintSEListener.painting == false) return;
 		
 		PointInfo point = new PointInfo(e.getX(), e.getY(), 
 				MyFrame.paintColor, MyFrame.selectedStroke);

@@ -13,7 +13,7 @@ public class UndoListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		doUndo();
-		Main.myFrame.menuPanel.requestFocus();
+		Main.myFrame.requestFocus();
 	}
 	
 	public void doUndo() {
@@ -22,7 +22,9 @@ public class UndoListener implements ActionListener {
 		if (pointsLen == 0) return;
 		
 		ArrayList<PointInfo> removedPoint;
-		removedPoint = MyFrame.points.remove(pointsLen-1);
+		do {
+			removedPoint = MyFrame.points.remove(pointsLen-1);
+		} while (removedPoint == null);
 		MyFrame.pointsHistory.add(removedPoint);
 		PaintingListener.paintPanel.repaint();
 	}

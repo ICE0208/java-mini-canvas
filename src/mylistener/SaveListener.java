@@ -24,7 +24,7 @@ public class SaveListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		doSave();
-		Main.myFrame.menuPanel.requestFocus();
+		Main.myFrame.requestFocus();
 	}
 	
 	public void doSave() {

@@ -16,8 +16,6 @@ public class MenuPanel extends JPanel {
 	
 	public MenuPanel(MyFrame myFrame) {
 		
-		addKeyListener(new BtnKeyListener());
-		
 		seleColor.addMouseListener(new ColorListener(myFrame));
 		add(seleColor);
 		

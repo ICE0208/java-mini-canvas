@@ -29,9 +29,9 @@ public class SaveManager {
 		
 		try { 
 		    ImageIO.write(image, "png", new File(getSavePath())); 
-		    System.out.println("저장완료!");
+		    System.out.println("저장완료! complete");
 		} catch (Exception e) {
-		    System.out.println("저장실패");
+		    System.out.println("저장실패 fail");
 		}
 		
 		saveTrying = false;
