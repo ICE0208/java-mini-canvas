@@ -23,6 +23,11 @@ public class MenuPanel extends JPanel {
 		selectPen.addActionListener(new PenListener());
 		add(selectPen);
 		
+		String[] strokes = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+		JComboBox<Object> setStrokeCombo = new JComboBox<Object>(strokes);
+		setStrokeCombo.setBackground(Color.LIGHT_GRAY);
+		add(setStrokeCombo);
+		
 		JButton selectEraser = new JButton("Eraser");
 		selectEraser.addActionListener(new EraserListener());
 		add(selectEraser);
