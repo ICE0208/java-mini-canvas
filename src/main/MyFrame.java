@@ -27,7 +27,7 @@ public class MyFrame extends JFrame{
 	public PaintPanel paintPanel = new PaintPanel();
 	public MenuPanel menuPanel = new MenuPanel(myFrame);
 	
-	SettingManager settingManager = new SettingManager(myFrame);
+	public SettingManager settingManager = new SettingManager(myFrame);
 	ShortCutManager shortCutManager = new ShortCutManager(menuPanel);
 
 

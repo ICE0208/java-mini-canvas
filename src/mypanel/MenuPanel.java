@@ -25,7 +25,10 @@ public class MenuPanel extends JPanel {
 		
 		String[] strokes = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
 		JComboBox<Object> setStrokeCombo = new JComboBox<Object>(strokes);
+		setStrokeCombo.setSelectedItem("4"); // default value
 		setStrokeCombo.setBackground(Color.LIGHT_GRAY);
+		
+		setStrokeCombo.addActionListener(new StrokeListener());
 		add(setStrokeCombo);
 		
 		JButton selectEraser = new JButton("Eraser");
