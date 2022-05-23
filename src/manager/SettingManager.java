@@ -10,14 +10,14 @@ import main.MyFrame;
 
 public class SettingManager {
 	JFrame jFrame;
-	static private ArrayList<BasicStroke> bStrokes = new ArrayList<BasicStroke>();
+	static private ArrayList<BasicStroke> Strokes = new ArrayList<BasicStroke>();
 	
 	
 	public SettingManager(JFrame j) {
 		this.jFrame = j;
 		
 		for (int i=0; i<11; i++) {
-			bStrokes.add(new BasicStroke(i));
+			Strokes.add(new BasicStroke(i));
 		}
 	}
 	
@@ -39,10 +39,11 @@ public class SettingManager {
 	}
 	
 	static public void setStroke(int stroke) {
-		if (stroke < 0 || stroke > 10) {
+		if (stroke < 1 || stroke > 10) {
 			System.out.println("Error in setStroke -> selectedStroke was not changed");
+			return;
 		}
-		MyFrame.selectedStroke = SettingManager.bStrokes.get(stroke);
+		MyFrame.selectedStroke = SettingManager.Strokes.get(stroke);
 	}
 	
 }
