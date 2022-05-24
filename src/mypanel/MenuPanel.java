@@ -23,9 +23,25 @@ public class MenuPanel extends JPanel {
 		selectPen.addActionListener(new PenListener());
 		add(selectPen);
 		
+		String[] penStrokes = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+		JComboBox<Object> setPenStrokeCombo = new JComboBox<Object>(penStrokes);
+		setPenStrokeCombo.setSelectedItem("4"); // default value
+		setPenStrokeCombo.setBackground(Color.LIGHT_GRAY);
+		setPenStrokeCombo.addActionListener(new PenStrokeListener());
+		add(setPenStrokeCombo);
+		
+		add(new JSeparator(SwingConstants.VERTICAL)); // ????
+		
 		JButton selectEraser = new JButton("Eraser");
 		selectEraser.addActionListener(new EraserListener());
 		add(selectEraser);
+		
+		String[] eraserStrokes = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+		JComboBox<Object> setEraserStrokeCombo = new JComboBox<Object>(eraserStrokes);
+		setEraserStrokeCombo.setSelectedItem("4"); // default value
+		setEraserStrokeCombo.setBackground(Color.LIGHT_GRAY);
+		setEraserStrokeCombo.addActionListener(new EraserStrokeListener());
+		add(setEraserStrokeCombo);
 		
 		add(new JSeparator(SwingConstants.VERTICAL)); // ????
 		

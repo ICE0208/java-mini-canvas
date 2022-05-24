@@ -23,14 +23,16 @@ public class SettingManager {
 	
 	public void resetSettings() {
 		// Default Frame Settings
-		jFrame.setTitle("MINI CANVAS v0.3.1");
+		jFrame.setTitle("MINI CANVAS v0.4.0");
 		jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jFrame.setSize(1000, 600);
 //		jFrame.setResizable(false);
 		
 		// Default Drawing Settings
 		SettingManager.setColor(Color.BLACK);
-		SettingManager.setStroke(4);
+		SettingManager.setEraserStroke(4);
+		SettingManager.setPenStroke(4);
+		MyFrame.paintStroke = Strokes.get(4);
 	}
 	
 	static public void setColor(Color color) {
@@ -38,12 +40,21 @@ public class SettingManager {
 		MyFrame.selectedColor = color;
 	}
 	
-	static public void setStroke(int stroke) {
+	static public void setPenStroke(int stroke) {
 		if (stroke < 1 || stroke > 10) {
 			System.out.println("Error in setStroke -> selectedStroke was not changed");
 			return;
 		}
-		MyFrame.selectedStroke = SettingManager.Strokes.get(stroke);
+//		MyFrame.paintStroke = SettingManager.Strokes.get(stroke);
+		MyFrame.selectedPenStroke = SettingManager.Strokes.get(stroke);
+	}
+	static public void setEraserStroke(int stroke) {
+		if (stroke < 1 || stroke > 10) {
+			System.out.println("Error in setStroke -> selectedStroke was not changed");
+			return;
+		}
+//		MyFrame.paintStroke = SettingManager.Strokes.get(stroke);
+		MyFrame.selectedEraserStroke = SettingManager.Strokes.get(stroke);
 	}
 	
 }
