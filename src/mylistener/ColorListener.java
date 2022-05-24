@@ -6,7 +6,7 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.JColorChooser;
 
-import main.Main;
+import main.MiniCanvas;
 import main.MyFrame;
 import manager.ButtonManager;
 import manager.CursorManager;
@@ -22,9 +22,9 @@ public class ColorListener extends MouseAdapter {
 		if (pickedColor == null) return;
 		SettingManager.setColor(pickedColor);
 		myFrame.menuPanel.seleColor.repaint();
-		Main.myFrame.cursorManager.setCursor(CursorManager.PEN);
+		MiniCanvas.myFrame.cursorManager.setCursor(CursorManager.PEN);
 		MyFrame.paintStroke = MyFrame.selectedPenStroke;
-		Main.myFrame.requestFocus();
+		MiniCanvas.myFrame.requestFocus();
 	}
 	
 	public ColorListener(MyFrame myFrame) {

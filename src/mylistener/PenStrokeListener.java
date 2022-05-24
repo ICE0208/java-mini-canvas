@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JComboBox;
 
-import main.Main;
+import main.MiniCanvas;
 import main.MyFrame;
 import manager.ButtonManager;
 import manager.CursorManager;
@@ -23,8 +23,8 @@ public class PenStrokeListener implements ActionListener {
 		// 펜으로 바꾸기
 		MyFrame.paintColor = MyFrame.selectedColor;
 		MyFrame.paintStroke = MyFrame.selectedPenStroke;
-		Main.myFrame.cursorManager.setCursor(CursorManager.PEN);
-		Main.myFrame.requestFocus();
+		MiniCanvas.myFrame.cursorManager.setCursor(CursorManager.PEN);
+		MiniCanvas.myFrame.requestFocus();
 	}
 
 }

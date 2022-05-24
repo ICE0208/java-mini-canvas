@@ -8,14 +8,14 @@ import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 
-import main.Main;
+import main.MiniCanvas;
 import main.MyFrame;
 
 public class CursorManager {
 	private static Toolkit tk = Toolkit.getDefaultToolkit();
-	private static ImageIcon PENICON = new ImageIcon(Main.class.getResource("/img/pen.png"));
+	private static ImageIcon PENICON = new ImageIcon(MiniCanvas.class.getResource("/img/pen.png"));
 	private static Image PENIMAGE = PENICON.getImage();
-	private static ImageIcon ERASERICON = new ImageIcon(Main.class.getResource("/img/eraser.png"));
+	private static ImageIcon ERASERICON = new ImageIcon(MiniCanvas.class.getResource("/img/eraser.png"));
 	private static Image ERASERIMAGE = ERASERICON.getImage();
 	@SuppressWarnings("serial")
 	private static ArrayList<Cursor> cursorList = new ArrayList<Cursor>() {{

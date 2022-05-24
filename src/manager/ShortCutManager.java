@@ -21,27 +21,45 @@ public class ShortCutManager {
 	
 	@SuppressWarnings("serial")
 	public void setShortCutAll() {
-		//undo
+		//undo for mac
         im.put(KeyStroke.getKeyStroke("meta Z"), "undo");
         targetPanel.getActionMap().put("undo", new AbstractAction(){
             public void actionPerformed(ActionEvent e) {
-                System.out.println("undo shortcut");
                 targetPanel.undoListener.doUndo();
             }
         });
-      //redo
+      //undo for win + mac
+        im.put(KeyStroke.getKeyStroke("control Z"), "undo");
+        targetPanel.getActionMap().put("undo", new AbstractAction(){
+            public void actionPerformed(ActionEvent e) {
+                targetPanel.undoListener.doUndo();
+            }
+        });
+      //redo for mac
         im.put(KeyStroke.getKeyStroke("meta shift Z"), "redo");
         targetPanel.getActionMap().put("redo", new AbstractAction(){
             public void actionPerformed(ActionEvent e) {
-                System.out.println("redo shortcut");
                 targetPanel.redoListener.doRedo();
             }
         });
-        //save
+      //redo for win + mac
+        im.put(KeyStroke.getKeyStroke("control Y"), "redo");
+        targetPanel.getActionMap().put("redo", new AbstractAction(){
+            public void actionPerformed(ActionEvent e) {
+                targetPanel.redoListener.doRedo();
+            }
+        });
+        //save for mac
         im.put(KeyStroke.getKeyStroke("meta S"), "save");
         targetPanel.getActionMap().put("save", new AbstractAction(){
             public void actionPerformed(ActionEvent e) {
-                System.out.println("save shortcut");
+                targetPanel.saveListener.doSave();
+            }
+        });
+      //save for win + mac
+        im.put(KeyStroke.getKeyStroke("control S"), "save");
+        targetPanel.getActionMap().put("save", new AbstractAction(){
+            public void actionPerformed(ActionEvent e) {
                 targetPanel.saveListener.doSave();
             }
         });

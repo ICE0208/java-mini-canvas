@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import javax.swing.SwingUtilities;
 
-import main.Main;
+import main.MiniCanvas;
 import main.MyFrame;
 import point.PointInfo;
 
@@ -23,7 +23,7 @@ public class PaintSEListener extends MouseAdapter {
 		MyFrame.points.add(PaintingListener.tempPoints);
 		PaintingListener.tempPoints = null;
 		PaintingListener.paintPanel.repaint();
-		Main.myFrame.requestFocus();
+		MiniCanvas.myFrame.requestFocus();
 	}
 	
 	@Override
@@ -42,7 +42,7 @@ public class PaintSEListener extends MouseAdapter {
 		MyFrame.points.add(PaintingListener.tempPoints);
 		PaintingListener.tempPoints = null;
 		PaintingListener.paintPanel.repaint();
-		Main.myFrame.requestFocus();
+		MiniCanvas.myFrame.requestFocus();
 	}
 		
 }
