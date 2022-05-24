@@ -15,8 +15,11 @@ import point.*;
 @SuppressWarnings("serial")
 public class MyFrame extends JFrame{
 	public static Color paintColor;
+	public static BasicStroke paintStroke;
+	
 	public static Color selectedColor;
-	public static BasicStroke selectedStroke;
+	public static BasicStroke selectedPenStroke;
+	public static BasicStroke selectedEraserStroke;
 	public static ArrayList<ArrayList<PointInfo>> points = new ArrayList<ArrayList<PointInfo>>();
 	public static PointsHistory pointsHistory = new PointsHistory();
 	
@@ -35,7 +38,7 @@ public class MyFrame extends JFrame{
 		// Set Default Settings
 		settingManager.resetSettings();
 		c.setLayout(new BorderLayout());
-		cursorManager.setPenCursor(CursorManager.PEN);
+		cursorManager.setCursor(CursorManager.PEN);
 		
 		c.add(menuPanel, BorderLayout.NORTH);
 		

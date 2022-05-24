@@ -31,7 +31,7 @@ public class CursorManager {
 		this.myFrame = myFrame;
 	}
 	
-	public void setPenCursor(int cursorShape) {
+	public void setCursor(int cursorShape) {
 		if (cursorShape < 0 || cursorShape >= cursorList.size()) return;
 		
 		myFrame.paintPanel.setCursor(cursorList.get(cursorShape));
