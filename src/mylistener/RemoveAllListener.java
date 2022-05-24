@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
-import main.Main;
+import main.MiniCanvas;
 import main.MyFrame;
 import manager.ButtonManager;
 
@@ -14,11 +14,11 @@ public class RemoveAllListener implements ActionListener{
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		Main.myFrame.requestFocus();
+		MiniCanvas.myFrame.requestFocus();
 		if (ButtonManager.canPressBtn() == false) return;
 		// Remove All Confirm
 		int confirm = JOptionPane.showConfirmDialog(null, MESSAGE, "Confirm", JOptionPane.YES_NO_OPTION);
-		Main.myFrame.requestFocus();
+		MiniCanvas.myFrame.requestFocus();
 		if (confirm != JOptionPane.YES_OPTION) return;
 		
 		MyFrame.points.clear();

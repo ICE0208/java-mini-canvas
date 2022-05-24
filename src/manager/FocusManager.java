@@ -3,7 +3,7 @@ package manager;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
 
-import main.Main;
+import main.MiniCanvas;
 import mylistener.PaintSEListener;
 
 public class FocusManager implements WindowFocusListener {
@@ -12,13 +12,13 @@ public class FocusManager implements WindowFocusListener {
 	boolean isLost = false;
 	
 	public static void forceFocus() {
-		Main.myFrame.setFocusable(true);
-		Main.myFrame.requestFocusInWindow();
+		MiniCanvas.myFrame.setFocusable(true);
+		MiniCanvas.myFrame.requestFocusInWindow();
 	}
 	
 	@Override
 	public void windowGainedFocus(WindowEvent e) {
-		Main.myFrame.requestFocus();
+		MiniCanvas.myFrame.requestFocus();
 		if (isLost == false) return;
 		isLost = false;
 		forceFocus();

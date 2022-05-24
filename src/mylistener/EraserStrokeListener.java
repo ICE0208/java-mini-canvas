@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JComboBox;
 
-import main.Main;
+import main.MiniCanvas;
 import main.MyFrame;
 import manager.ButtonManager;
 import manager.CursorManager;
@@ -24,8 +24,8 @@ public class EraserStrokeListener implements ActionListener {
 		// 지우개로 바꾸기
 		MyFrame.paintColor = Color.WHITE;
 		MyFrame.paintStroke = MyFrame.selectedEraserStroke;
-		Main.myFrame.cursorManager.setCursor(CursorManager.ERASER);
-		Main.myFrame.requestFocus();
+		MiniCanvas.myFrame.cursorManager.setCursor(CursorManager.ERASER);
+		MiniCanvas.myFrame.requestFocus();
 	}
 
 }
